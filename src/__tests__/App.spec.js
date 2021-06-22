@@ -23,7 +23,7 @@ test('<App /> Add appointment and check conditional title', () => {
     userEvent.type(screen.getByTestId('pet'), 'ThePet');
     userEvent.type(screen.getByTestId('owner'), 'TheOwner');
     userEvent.type(screen.getByTestId('date'), '2021-06-10');
-    //userEvent.type(screen.getByTestId('hour'), '10:30');
+    //userEvent.type(screen.getByTestId('hour'), '10:30'); // It doesn't work - The state is updated correctly as a String, even if the input is type 'time'. 
     fireEvent.change(screen.getByTestId('hour'), { target: { value: '10:30' } });
     userEvent.type(screen.getByTestId('symptoms'), 'TheSymptom');
 
